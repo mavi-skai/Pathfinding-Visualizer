@@ -4,7 +4,7 @@ Welcome to my Pathfinding Visualizer! This project was built based on my interes
 I decided I would do so by building a visualizer to help me better understand the concepts. I hope that  you enjoy playing
 around with this visualization. 
 
-PS:im going to update maze algorithm in the near future.
+PS:im going to add  maze algorithm in the near future.
 
 you can access it here: https://maveylencio.github.io/Pathfinding-Visualizer/
 
