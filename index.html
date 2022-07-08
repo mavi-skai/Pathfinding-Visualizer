@@ -1,0 +1,111 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="#">
+    <title>Pathfinding Visualizer</title>
+  </head>
+  <body>
+    <nav id="nav" class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a id='title' class="navbar-brand" href="#">Pathfinding Visualizer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="pathalgorithm" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Algorithms
+              </a>
+              <ul id="pathalgo" class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Breadth-First Search</a></li>
+                <!-- <li><a class="dropdown-item" href="#">Bidirectional Breadth-First Search</a></li> -->
+                <li><a class="dropdown-item" href="#">Depth-First Search</a></li>
+                <li><a class="dropdown-item" href="#">A* Search</a></li>
+                <li><a class="dropdown-item" href="#">Dijkstra's Algorithm</a></li>
+                <li><a class="dropdown-item" href="#">Greedy Best-First Search</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="mazealgorithm" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Maze & Pattern
+              </a>
+              <ul id='mazealgo' class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <!-- <li><a class="dropdown-item" href="#">Recursive Division</a></li> -->
+                <li><a class="dropdown-item" href="#">Randomized Prim's algorithm</a></li>
+                <li><a class="dropdown-item" href="#">Spiral</a></li>
+                <li><a class="dropdown-item" href="#">Diagonal Steps</a></li>
+                
+                
+                
+              </ul>
+            </li>
+            <li>
+              <button id="visualize" type="button" class="btn btn-primary">Visualize</button>
+            </li>
+            <li class="nav-item active">
+              <a id="clearboard" class="nav-link" href="#">Clear Board</a>
+            </li>
+            <li class="nav-item active">
+              <a id="clearwalls" class="nav-link" href="#">Clear Walls</a>
+            </li>
+            <li class="nav-item active">
+              <a id="clearpath" class="nav-link" href="#">Clear Path</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle speedinner" href="#" id="speedbar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Speed: Fast
+              </a>
+              <ul id="speed" class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Fast </a></li>
+                <li><a class="dropdown-item" href="#">Average </a></li>
+                <li><a class="dropdown-item" href="#">Slow </a></li>
+              </ul>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="mainText">
+      <ul>
+        <li><div class="start"></div>Start Node</li>
+        <li><div class="end"></div>Target Node</li>
+        <li><div class="unvisited-node"></div>Unvisited Node</li>
+        <li><div class="visited"></div><div class="visited-node"></div>Visited Node</li>
+        <li><div class="wall"></div>Wall Node</li>
+        <li><div class="shortest-path"></div>Shortest-path Node</li>
+      </ul>
+    </div>
+    <div id="algorithmDescriptor">Pick an algorithm and visualize it!</div>
+    <table id="grid"></table>
+    
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="resources/structure.js"></script>
+    <script type="module" src="resources/MazeAlgorithm/spiral.js"></script>
+    <script type="module" src="resources/MazeAlgorithm/ds.js"></script>
+    <script type="module" src="resources/MazeAlgorithm/rd.js"></script>
+    <script type="module" src="resources/MazeAlgorithm/prim.js"></script>
+    <script type="module" src="resources/PathAlgorithm/gbfs.js"></script>
+    <script type="module" src="resources/PathAlgorithm/dijkstra.js"></script>
+    <script type="module" src="resources/PathAlgorithm/dfs.js"></script>
+    <script type="module" src="resources/PathAlgorithm/bfs.js"></script>
+    <script type="module" src="resources/PathAlgorithm/astar.js"></script>
+    <script type="module" src="resources/node.js"></script>
+    <script type="module" src="resources/index.js"></script>
+    
+    
+    
+    
+    
+    
+  </body>
+</html>

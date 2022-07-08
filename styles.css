@@ -1,0 +1,469 @@
+#nav {
+  background-color: rgb(40,42,53);
+  padding-left: 21px;
+  padding-right: 21px;
+}
+
+#title {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+#pathalgorithm{
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  margin-top: 5px;
+  margin-left: 25px;
+}
+
+#pathalgo{
+  background-color: rgb(40,42,53);
+}
+
+#pathalgo li a{
+  font-weight: medium;
+  color: white;
+}
+
+#mazealgorithm{
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  margin-top: 5px;
+  margin-left: 25px;
+}
+#mazealgo{
+  background-color: rgb(40,42,53);
+}
+
+#mazealgo li a{
+  font-weight: medium;
+  color: white;
+}
+
+#visualize {
+  background-color: rgb(15, 146, 176);
+  margin-left: 15px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: medium;
+  margin-top: 5px;
+}
+
+#clearboard{
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  margin-top: 5px;
+  margin-left: 40px;
+}
+
+#clearwalls{
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  margin-top: 5px;
+  margin-left: 25px;
+}
+
+#clearpath{
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  margin-top: 5px;
+  margin-left: 25px;
+}
+
+#speedbar{
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  margin-top: 5px;
+  margin-left: 25px;
+}
+
+#speed{
+  background-color: rgb(40,42,53);
+}
+
+#speed li a{
+  font-weight: medium;
+  color: white;
+}
+
+/* -------------------------------------------hover-------------------------------------------------------- */
+#title:hover {
+  color: rgb(4, 171, 151);
+}
+
+#pathalgo li a:hover {
+  background-color: rgb(4, 171, 151);
+}
+
+#pathalgorithm:hover {
+  color: rgb(4, 171, 151);
+}
+
+#mazealgo li a:hover {
+  background-color: rgb(4, 171, 151);
+}
+
+#mazealgorithm:hover {
+  color: rgb(4, 171, 151);
+}
+
+#clearboard:hover {
+  color: rgb(4, 171, 151);
+}
+
+#clearwalls:hover {
+  color: rgb(4, 171, 151);
+}
+
+#clearpath:hover {
+  color: rgb(4, 171, 151);
+}
+
+#speedbar:hover {
+  color: rgb(4, 171, 151);
+}
+
+#speed li a:hover {
+  background-color: rgb(4, 171, 151);
+}
+
+
+
+
+
+#grid tr {
+    width:25px; height:25px;
+    border:1px solid rgb(42, 152, 203);
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    
+}
+
+#grid td {
+    width:25px; height:25px;
+    border:1px solid rgb(42, 152, 203);
+}
+
+#grid {
+    margin: 20px auto 0 auto;
+}
+
+#mainText > ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 5px auto 0px 53px;
+  font-size: large;
+  font-weight: medium;
+  color: #05386b;
+}
+
+#mainText div {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  position: relative;
+  top: 0.35em;
+  margin: 0 0.42em;
+  
+}
+
+#algorithmDescriptor {
+  text-align: center;
+  color: #05386b;
+  font-size: large;
+  font-weight: medium;
+}
+
+.unvisited {
+    background-color: white;
+}
+
+.unvisited-node {
+  background-image: url("images/unvisited.png");
+  background-size: contain;
+  background-position:center; 
+}
+
+.visited-node {
+  background-color: rgb(138,43,226);
+  animation-name: currentnode-pathAnimation;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.visited {
+    animation-name: visitedStartNodeBlueAnimation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.wall {
+    animation-name: wallAnimation;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.wall2 {
+  animation-name: wallAnimation;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.shortest-path{
+  background-color: rgb(255, 254, 106);
+  animation-name: shortest-pathAnimation;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+.current-node{
+  background-color: rgb(138,43,226);
+  animation-name: currentnode-pathAnimation;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+
+
+.start {
+    background-image: url("images/starticon.png");
+    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:center; 
+    cursor: pointer;
+    animation-name: specialNodes;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+.start-path {
+  background-image: url("images/starticon.png");
+  background-color: rgb(255, 254, 106);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position:center; 
+  cursor: pointer;
+  animation-name: specialNodes;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+
+.end {
+    background-image: url("images/endicon.png");
+    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:center; 
+    cursor: pointer;
+    animation-name: specialNodes;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    user-select: none;
+}
+
+.end-path {
+  background-image: url("images/endicon.png");
+  background-color: rgb(255, 254, 106);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position:center; 
+  cursor: pointer;
+  animation-name: specialNodes;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+}
+
+
+
+
+
+@keyframes wallAnimation {
+    0% {
+      transform: scale(.3);
+      background-color: rgb(12, 53, 71);
+    }
+  
+    50% {
+      transform: scale(1.2);
+      background-color: rgb(12, 53, 71);
+    }
+  
+    100% {
+      transform: scale(1.0);
+      background-color: rgb(12, 53, 71);
+    }
+  }
+
+  @keyframes visitedStartNodeBlueAnimation {
+    /* 0% {
+      transform: scale(.3);
+      background-color: rgba(238, 0, 255, 0.75);
+      border-radius: 100%;
+    } */
+    /* 100% {
+      transform: scale(1.0);
+      background-color: rgb(255, 251, 0);
+    } */
+
+    0% {
+      transform: scale(1.0);
+      background-color: rgba(238, 0, 255, 0.75);
+    }
+    50% {
+      transform: scale(0.7);
+      background-color: rgba(17, 104, 217, 0.75);
+    }
+    75% {
+      transform: scale(1.2);
+      background-color: rgba(0, 217, 159, 0.75);
+    }
+  
+    100% {
+      transform: scale(1.0);
+      background-color: rgba(0, 190, 218, 0.75);
+    }
+  }
+
+
+  @keyframes shortest-pathAnimation {
+    0% {
+      transform: scale(.6);
+      background-color: rgb(255, 254, 106);
+    }
+    
+  
+    50% {
+      transform: scale(1.2);
+      background-color: rgb(255, 254, 106);
+    }
+  
+    100% {
+      transform: scale(1.0);
+      background-color: rgb(255, 254, 106);
+    }
+  }
+
+  @keyframes currentnode-pathAnimation {
+    0% {
+      transform: scale(.6);
+      background-color: rgb(138,43,226);
+    }
+  
+    50% {
+      transform: scale(1.2);
+      background-color: rgb(138,43,226);
+    }
+  
+    100% {
+      transform: scale(1.0);
+      background-color: rgb(138,43,226);
+    }
+  }
+
+
+@keyframes specialNodes {
+    0% {
+      transform: scale(.3);
+      /*background-color: darkslategrey;*/
+    } 
+  
+    50% {
+      transform: scale(1);
+      /*background-color: darkslategrey;*/
+    }
+  
+    100% {
+      transform: scale(1.0);
+      /*background-color: darkslategrey;*/
+    }
+  }
+
+  @keyframes queue-pathAnimation {
+    0% {
+      transform: scale(.6);
+      background-color: rgb(43, 226, 43);
+    }
+  
+    50% {
+      transform: scale(1.2);
+      background-color: rgb(43, 226, 43);
+    }
+  
+    100% {
+      transform: scale(1.0);
+      background-color: rgb(43, 226, 43);
+    }
+  }
+
+
+  .frontier{
+    background-color: rgb(43, 226, 43);
+    animation-name: queue-pathAnimation;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
