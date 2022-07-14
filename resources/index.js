@@ -41,18 +41,6 @@ $('#visualize').on('click', function () {
         RunAlgorithm();
 });
 
-// $('#nextButton').on('click',function(){
-//         clearTutorial()
-// })
-
-// $('#previousButton').on('click',function(){
-//         details_tutorial(1)
-// })
-
-// $('#skipButton').on('click',function(){
-//         skiptutorial()
-// })
-
 $('#title').on('click', function () {
         console.log('title');
         location.reload();
