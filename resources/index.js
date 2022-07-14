@@ -765,7 +765,7 @@ function details_tutorial(ctr){
                         newDiv.setAttribute('id','tutorialCounter');
                         newDiv.innerHTML=ctr+'/7'
                         img.setAttribute('id','secondTutorialImage');
-                        img.src = "images/vis.png";
+                        img.src = "images/vis.PNG";
 
                         elements.push(h3)
                         elements.push(h6)
