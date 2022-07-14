@@ -4,6 +4,107 @@
   padding-right: 21px;
 }
 
+#tutorial {
+  position: absolute;
+  z-index: 3;
+  background-color: rgba(255, 255, 255, 1);
+  width: 50%;
+  height: 70%;
+  border: 2px solid #34495e;
+  border-radius: 4px;
+  text-align: center;
+  float: right;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#nextButton {
+  color: #ffffff;
+  background-color: #1abc9c;
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
+}
+
+#previousButton {
+  color: #ffffff;
+  background-color: #1abc9c;
+  position: absolute;
+  right: 12%;
+  bottom: 2%;
+}
+
+#skipButton {
+  color: #ffffff;
+  background-color: #1abc9c;
+  position: absolute;
+  left: 2%;
+  bottom: 2%;
+}
+
+#finishButton {
+  color: #ffffff;
+  background-color: #1abc9c;
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
+}
+
+#finishButton:hover,
+#nextButton:hover,
+#previousButton:hover,
+#skipButton:hover {
+  background-color: #48c9b0;
+}
+
+#tutorialCounter {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+}
+
+#mainTutorialImage {
+  width: 60%;
+}
+
+#secondTutorialImage {
+  width: 90%;
+  padding-top: 5px;
+}
+
+#tutorial > h3 {
+  font-size: 40px;
+  color: #34495e;
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+
+#tutorial > h6 {
+  font-size: 23px;
+  color: #34495e;
+  padding-top: 30px;
+  padding: 5px 20px 5px 20px;
+}
+
+#tutorial > p {
+  font-size: 19px;
+  color: #34495e;
+  padding: 5px 20px 5px 20px;
+}
+
+#tutorial > ul li {
+  list-style: none;
+  padding-bottom: 5px;
+  padding-right: 40px;
+  font-size: 14px;
+}
+
 #title {
   font-size: 20px;
   color: white;

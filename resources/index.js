@@ -14,7 +14,7 @@ let row = 19;
 let col = 54;
 var ismousedown = false;
 let NODES = ["START", "END", "WEIGHT", "WALL", "UNVISITED", "VISITED", "SHORTEST-PATH", "CURRENT-NODE", "START-PATH", "END-PATH"];
-const ALGORITHMS = [];
+let ctr = 1;
 const default_start = [10, 14];
 const default_end = [10, 37];
 let gridarray = makeGrid(row, col);
@@ -23,13 +23,14 @@ let current_start = gridarray[default_start[0]][default_start[1]];
 let current_end = gridarray[default_end[0]][default_end[1]];
 let dragged_node;
 let runalgo = -1;
-let running = false;
+let running = true;
 let pred = Array.from(Array(row), () => new Array(col));
 export { gridarray, row, col, NODES, ms }
 SetDefaultNodes();
 mouseHoldListener();
 prevenContextMenu();
 nodeAddEventListener(row, col, gridarray);
+details_tutorial(ctr)
 
 
 
@@ -38,8 +39,19 @@ $('#visualize').on('click', function () {
         ClearPath();
         setNeighbors(row, col, gridarray);
         RunAlgorithm();
-        //makeMaze();
 });
+
+// $('#nextButton').on('click',function(){
+//         clearTutorial()
+// })
+
+// $('#previousButton').on('click',function(){
+//         details_tutorial(1)
+// })
+
+// $('#skipButton').on('click',function(){
+//         skiptutorial()
+// })
 
 $('#title').on('click', function () {
         console.log('title');
@@ -59,7 +71,6 @@ $('#mazealgo li').on('click', function () {
         ClearWalls()
         generateMaze(txt)
 });
-
 
 $('#clearboard').on('click', function () {
         if (running === true) { return }
@@ -566,3 +577,238 @@ export const show_shortest_path = async () => {
         current_start.cell.className = NODES[8];
 }
 
+function skiptutorial(){
+        running = false
+        document.getElementById('tutorial').style.display = 'none';
+}
+
+function clearTutorial(){
+        const myNode = document.getElementById("tutorial");
+        while (myNode.lastElementChild){
+                myNode.removeChild(myNode.lastElementChild);
+        }
+}
+
+function add_Tutorial(elements){
+        const myNode = document.getElementById("tutorial");
+        for(let x=0;x<elements.length;x++){
+                myNode.appendChild(elements[x])
+        }
+}
+
+function buttons_tutorials(elements){
+
+        const myNode = document.getElementById("tutorial");
+
+        let nextBtn = document.createElement("button");
+        let prevBtn = document.createElement("button");
+        let skipBtn = document.createElement("button");
+        if(ctr==7){
+                nextBtn.innerHTML = "Finish";
+                nextBtn.setAttribute('id','nextButton')
+                nextBtn.classList.add('btn','btn-default','navbar-btn');
+                nextBtn.setAttribute('type', 'button')      
+                nextBtn.onclick = function() { 
+                        skiptutorial()
+                }
+        }else{
+
+                nextBtn.innerHTML = "Next";
+                nextBtn.setAttribute('id','nextButton')
+                nextBtn.classList.add('btn','btn-default','navbar-btn');
+                nextBtn.setAttribute('type', 'button')      
+                nextBtn.onclick = function() { 
+                ctr+=1
+                details_tutorial(ctr);
+                }
+        }
+        
+
+        prevBtn.innerHTML = "Previous";
+        prevBtn.setAttribute('id','previousButton')
+        prevBtn.classList.add('btn','btn-default','navbar-btn');
+        prevBtn.setAttribute('type', 'button')      
+        prevBtn.onclick = function() { 
+                if(ctr<=1){return}
+                ctr-=1
+                details_tutorial(ctr);
+        }
+
+        skipBtn.innerHTML = "Skip Tutorial";
+        skipBtn.setAttribute('id','skipButton')
+        skipBtn.classList.add('btn','btn-default','navbar-btn');
+        skipBtn.setAttribute('type', 'button')      
+        skipBtn.onclick = function() { 
+                skiptutorial()
+        }
+
+        myNode.appendChild(nextBtn)
+        myNode.appendChild(prevBtn)
+        myNode.appendChild(skipBtn)
+}
+
+function details_tutorial(ctr){
+        clearTutorial()
+        let elements = []
+        switch (ctr) {
+                case 1:
+                        var h3 = document.createElement("h3");
+                        var h6 = document.createElement("h6");
+                        var p = document.createElement("p");
+                        var newDiv = document.createElement("div");
+                        // var img = document.createElement("img");
+                        h3.innerHTML = 'Welcome to Pathfinding Visualizer!'
+                        h6.innerHTML = 'This short tutorial will walk you through all of the features of this application.'
+                        p.innerHTML = 'If you want to dive right in, feel free to press the "Skip Tutorial" button below. Otherwise, press "Next"!'
+                        newDiv.setAttribute('id','tutorialCounter');
+                        newDiv.innerHTML=ctr+'/7'
+                        // img.src = "images/pathfindinglogo.png";
+
+                        elements.push(h3)
+                        elements.push(h6)
+                        elements.push(p)
+                        elements.push(newDiv)
+                        // elements.push(img)
+                        add_Tutorial(elements)
+                        buttons_tutorials(elements)
+                        break;
+                case 2:
+                        var h3 = document.createElement("h3");
+                        var h6 = document.createElement("h6");
+                        var p = document.createElement("p");
+                        var newDiv = document.createElement("div");
+                        var img = document.createElement("img");
+                        h3.innerHTML = 'What is a pathfinding algorithm?'
+                        h6.innerHTML = 'A pathfinding algorithm\'s primary goal is to identify the shortest route between two places. This application visualizes various pathfinding algorithms in action, and more!'
+                        p.innerHTML = 'All algorithms on this application have been modified for a 2D grid'
+                        newDiv.setAttribute('id','tutorialCounter');
+                        newDiv.innerHTML=ctr+'/7'
+                        img.setAttribute('id','mainTutorialImage');
+                        img.src = "images/pathfindinglogo.png";
+
+                        elements.push(h3)
+                        elements.push(h6)
+                        elements.push(p)
+                        elements.push(newDiv)
+                        elements.push(img)
+
+                        add_Tutorial(elements)
+                        buttons_tutorials(elements)
+                        break;
+
+                case 3:
+                        var h3 = document.createElement("h3");
+                        var h6 = document.createElement("h6");
+                        var p = document.createElement("p");
+                        var newDiv = document.createElement("div");
+                        var img = document.createElement("img");
+                        h3.innerHTML = 'Picking an algorithm'
+                        h6.innerHTML = 'Choose an algorithm from the "Algorithms" drop-down menu.'
+                        p.innerHTML = 'Note that some algorithms are unweighted, while others are weighted. Additionally, not all algorithms guarantee the shortest path.'
+                        newDiv.setAttribute('id','tutorialCounter');
+                        newDiv.innerHTML=ctr+'/7'
+                        img.setAttribute('id','mainTutorialImage');
+                        img.src = "images/palgo.gif";
+                        
+
+                        elements.push(h3)
+                        elements.push(h6)
+                        elements.push(p)
+                        elements.push(newDiv)
+                        elements.push(img)
+
+                        add_Tutorial(elements)
+                        buttons_tutorials(elements)
+                        break;
+
+                case 4:
+                        var h3 = document.createElement("h3");
+                        var h6 = document.createElement("h6");
+                        var p = document.createElement("p");
+                        var newDiv = document.createElement("div");
+                        var img = document.createElement("img");
+                        h3.innerHTML = 'Adding walls and weights'
+                        h6.innerHTML = 'Left click on the grid to add a wall and Right click to delete a wall. Click on the grid while pressing W to add a weight. Generate mazes and patterns from the "Mazes & Patterns" drop-down menu.'
+                        p.innerHTML = 'Walls are impenetrable, meaning that a path cannot cross through them. Weights, however, are not impassable. They are simply more "costly" to move through.'
+                        newDiv.setAttribute('id','tutorialCounter');
+                        newDiv.innerHTML=ctr+'/7'
+                        img.setAttribute('id','mainTutorialImage');
+                        img.src = "images/wall.gif";
+
+                        elements.push(h3)
+                        elements.push(h6)
+                        elements.push(p)
+                        elements.push(newDiv)
+                        elements.push(img)
+
+                        add_Tutorial(elements)
+                        buttons_tutorials(elements)
+                        break;
+                case 5:
+                        var h3 = document.createElement("h3");
+                        var h6 = document.createElement("h6");
+                        var p = document.createElement("p");
+                        var newDiv = document.createElement("div");
+                        var img = document.createElement("img");
+                        h3.innerHTML = 'Dragging nodes'
+                        h6.innerHTML = 'Click and drag the start and target nodes to move them.'
+                        newDiv.setAttribute('id','tutorialCounter');
+                        newDiv.innerHTML=ctr+'/7'
+                        img.setAttribute('id','mainTutorialImage');
+                        img.src = "images/dragnode.gif";
+
+                        elements.push(h3)
+                        elements.push(h6)
+                        elements.push(newDiv)
+                        elements.push(img)
+
+                        add_Tutorial(elements)
+                        buttons_tutorials(elements)
+                        break;
+                case 6:
+                        var h3 = document.createElement("h3");
+                        var h6 = document.createElement("h6");
+                        var p = document.createElement("p");
+                        var newDiv = document.createElement("div");
+                        var img = document.createElement("img");
+                        h3.innerHTML = 'Visualizing and more'
+                        h6.innerHTML = 'Use the navbar buttons to visualize algorithms and to do other stuff!'
+                        p.innerHTML = 'You can clear the current path, clear walls and weights, clear the entire board, and adjust the visualization speed, all from the navbar. If you want to access this tutorial again, click on "Pathfinding Visualizer" in the top left corner of your screen.'
+                        newDiv.setAttribute('id','tutorialCounter');
+                        newDiv.innerHTML=ctr+'/7'
+                        img.setAttribute('id','secondTutorialImage');
+                        img.src = "images/vis.png";
+
+                        elements.push(h3)
+                        elements.push(h6)
+                        elements.push(p)
+                        elements.push(newDiv)
+                        elements.push(img)
+
+                        add_Tutorial(elements)
+                        buttons_tutorials(elements)
+                        break;
+                case 7:
+                        var h3 = document.createElement("h3");
+                        var h6 = document.createElement("h6");
+                        var p = document.createElement("p");
+                        var newDiv = document.createElement("div");
+                        // var img = document.createElement("img");
+                        h3.innerHTML = 'Enjoy!'
+                        h6.innerHTML = 'I hope you have just as much fun playing around with this visualization tool as I had building it!'
+                        p.innerHTML = 'If you want to see the source code for this application, check out my '+  "<a href='"+"https://github.com/maveylencio/Pathfinding-Visualizer"+"'>Github</a>" ;
+                        newDiv.setAttribute('id','tutorialCounter');
+                        newDiv.innerHTML=ctr+'/7'
+
+                        elements.push(h3)
+                        elements.push(h6)
+                        elements.push(p)
+                        elements.push(newDiv)
+
+                        add_Tutorial(elements)
+                        buttons_tutorials(elements)
+                        break;
+
+        }
+
+}
