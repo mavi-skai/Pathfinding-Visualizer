@@ -1,8 +1,6 @@
 # Pathfinding Visualizer
 
-Welcome to my Pathfinding Visualizer! This project was built based on my interest for learning pathfinding algorithm and  
-I decided I would do so by building a visualizer to help me better understand the concepts. I hope that  you enjoy playing
-around with this visualization. 
+Welcome to my Pathfinding Visualizer! This project was created out of my passion for learning pathfinding algorithms. To enhance my understanding of these concepts, I built a visualizer to provide a more interactive learning experience. I hope you have fun exploring and experimenting with this visualization tool.
 
 
 you can access it here: https://maveylencio.github.io/Pathfinding-Visualizer/
