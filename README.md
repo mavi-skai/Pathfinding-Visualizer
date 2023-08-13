@@ -16,8 +16,8 @@ Five pathfinding algorithm used in this application are:
 Maze generation and Patterns include:
 
 - Randomized prim’s algorithm
-- Diagonal (Matrix Traversal)
-- Spiral	(Matrix Traversal)
+- Diagonal 
+- Spiral	
 
 
 
